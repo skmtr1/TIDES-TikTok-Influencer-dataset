@@ -233,7 +233,7 @@ def get_results(key, result):
 
 print("preprocessing dataset...")
 
-video_files = ["../dataset/tiktok_videos-1.csv", "../tiktok_videos-2.csv"]
+video_files = ["../dataset/tiktok_videos-1.csv", "../dataset/tiktok_videos-2.csv"]
 video_frames = [pd.read_csv(f) for f in video_files]
 df_videos = pd.concat(video_frames) #pd.read_csv("../dataset/tiktok_videos.csv")
 df_infl = pd.read_csv("../dataset/tiktok_influencers.csv")
