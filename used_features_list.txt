@@ -1,25 +1,28 @@
-verified
-commerceUser
-following
-total_likes
-total_videos
-videos_liked
-Africa
-America
-Asia
-Europe
-Oceania
-weekday_0
-weekday_1
-weekday_2
-weekday_3
-weekday_4
-weekday_5
-weekday_6
-videos_per_day
-interposttime_mean
-interposttime_std
-likes_min
+verified -- whether the user is verified or not
+commerceUser -- whether the user is a commerce user or not
+following -- number of following
+total_likes -- number of total likes of the account
+total_videos -- number of videos the account has
+videos_liked -- number of videos the account liked
+Africa -- geographical region Africa
+America -- geographical region America
+Asia -- geographical region Asia
+Europe -- geographical region Europe
+Oceania -- geographical region Oceania
+weekday_0 -- percentage of videos created on monday
+weekday_1 -- percentage of videos created on tuesday
+weekday_2 -- percentage of videos created on wednesday
+weekday_3 -- percentage of videos created on thursday
+weekday_4 -- percentage of videos created on friday
+weekday_5 -- percentage of videos created on saturday
+weekday_6 -- percentage of videos created on sunday
+videos_per_day -- number of videos published per day
+interposttime_mean -- mean of days between videos
+interposttime_std -- std of days between videos
+===
+follows some statistics (min, max, mean std) of likes, views, shares, comments
+
+likes_min 
 shares_min
 views_min
 comments_min
@@ -35,9 +38,13 @@ likes_std
 shares_std
 views_std
 comments_std
-has_bioLink
-has_signature
-audio_musicOriginal_perc
+===
+has_bioLink -- whether the profile has a link in bio
+has_signature -- whether the profile has a signature
+audio_musicOriginal_perc -- percentage of videos with original music
+===
+follows some acoustic statistics derived from spotify across videos. The distribution of such statistics is represented in 10 bins, plus one bin (bin_0) for values below the minimum, and one bin (bin_11) for values above the maximum. both minimum and maximum are calculated at runtime at training time. 
+
 spotify_acousticness_bin_0
 spotify_acousticness_bin_1
 spotify_acousticness_bin_2
@@ -186,6 +193,8 @@ spotify_tempo_bin_8
 spotify_tempo_bin_9
 spotify_tempo_bin_10
 spotify_tempo_bin_11
+===
+follow some audio emotional statitics across videos. the distribution is again calculated in 12 bins (10 + 2 for min and max)
 audio_arousal_bin_0
 audio_arousal_bin_1
 audio_arousal_bin_2
@@ -234,10 +243,13 @@ audio_valence_mean
 audio_arousal_std
 audio_dominance_std
 audio_valence_std
-audio_neu
-audio_hap
-audio_sad
-audio_ang
+===
+audio_neu -- percentage of videos with neutral audio
+audio_hap -- percentage of videos with happy audio
+audio_sad -- percentage of videos with sad audio
+audio_ang -- percentage of videos with angry audio
+===
+follows some statitics (min, max, mean, std) of video width, height, width * height, duration, definition, and number of effects
 video_height_min
 video_width_min
 video_heightXwidth_min
@@ -263,6 +275,8 @@ duration_std
 video_definition_std
 n_effects_std
 video_hasText_perc
+===
+follows distribution and statics of Facial Action Units across videos. Distribution is represented in 12 bins as before.
 video_AU01_bin_0
 video_AU01_bin_1
 video_AU01_bin_2
@@ -541,8 +555,12 @@ video_AU25_std
 video_AU26_std
 video_AU28_std
 video_AU43_std
-video_male
-video_female
+===
+video_male -- percentage of videos with males
+video_female -- percentage of videos with females
+===
+follows age distribution in 22 bins (from 0 to 100 years old with step 5 years, one below 0 (not used) and one above 100)
+
 video_age_bin_0
 video_age_bin_1
 video_age_bin_2
@@ -565,30 +583,34 @@ video_age_bin_18
 video_age_bin_19
 video_age_bin_20
 video_age_bin_21
-video_indian
-video_white
-video_asian
-video_middle eastern
-video_latino hispanic
-video_black
-video_surprise
-video_sad
-video_fear
-video_neutral
-video_angry
-video_happy
-video_disgust
-video_0_faces
-video_1_faces
-video_2_faces
-video_3_faces
-video_4_faces
-video_5_faces
-video_above5_faces
 video_age_min
 video_age_max
 video_age_mean
 video_age_std
+===
+video_indian -- percentage of videos with indian people as most frequent
+video_white -- percentage of videos with white people as most frequent
+video_asian
+video_middle eastern
+video_latino hispanic
+video_black
+video_surprise -- percentage of surprise videos
+video_sad -- percentage of sad videos
+video_fear -- percentage of fear videos
+video_neutral 
+video_angry
+video_happy
+video_disgust
+video_0_faces -- percentage of videos with no faces
+video_1_faces -- percentage of videos with 1 face
+video_2_faces
+video_3_faces
+video_4_faces
+video_5_faces
+video_above5_faces -- percentage of videos with more than 5 faces
+===
+follows RGB information (r = red, b=blue, g= green, luminance, warm colors, cold colors, pleasure, arousal, dominance) across videos. distribution in 12 bins.
+
 video_RGB_r_percent_bin_0
 video_RGB_r_percent_bin_1
 video_RGB_r_percent_bin_2
@@ -733,6 +755,9 @@ video_percent_cold_std
 video_pleasure_std
 video_arousal_std
 video_dominance_std
+===
+follows texual statistics regarding number of mentions, hashtags, lenght of caption (in 12 bins), number of emojis, emoji positive neutral and negative with scores
+
 text_n_mentions_min
 text_n_hashtags_min
 text_n_mentions_max
@@ -837,6 +862,9 @@ text_EmoNegative_std
 text_EmoNeutral_std
 text_EmoPositive_std
 text_EmoSentScore_std
+===
+duration, likes, shares, comments, views in 6 bins
+
 duration_bin_0
 duration_bin_1
 duration_bin_2
